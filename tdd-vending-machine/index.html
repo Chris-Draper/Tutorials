@@ -1,0 +1,62 @@
+<html>
+<!-- https://github.com/dwyl/learn-tdd -->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Vending Machine Change Calculator TDD Tutorial</title>
+    <!-- Load the QUnit CSS file from CDN - Require to display our tests attractively -->
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.18.0.css">
+    <!-- Pure CSS is a minimalist CSS file we have included to make things look nicer -->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  </head>
+  <body style='margin: 0 1em;'>
+    <div id='main'>
+      <h1>Vending Machine <em>Change Calculator</em></h1>
+      <h3>Calculate the change (<em>coins</em>) to return to a customer when they buy something.</h2>
+    </div>
+    <!-- start vending machine functions -->
+    <script>
+    function getChange (cost, paid) {
+      var change = [];
+      var difference = paid - cost;
+      var coins = [100, 25, 10, 5, 1];
+      var i = 0;
+      while (difference !== 0) {
+        if (difference >= coins[i]) {
+          difference = difference - coins[i];
+          change.push(coins[i]);
+        } else {
+          i++;
+        }
+      };
+      return change;
+    };
+    </script>
+    <!-- end vending machine functions -->
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <!-- Load the QUnit Testing Framework from CDN - this is the important bit ... -->
+    <script src="https://code.jquery.com/qunit/qunit-1.18.0.js"></script>
+    <script>
+      test('getChange(1,1) should equal [] - an empty array', function(assert) {
+        var result = getChange(1, 1); //no change or coins just an empty array
+        var expected = [];
+        assert.deepEqual(result, expected);
+      }); //use deepEqual for arrays see: https://api.qunitjs.com/deepEqual/ - read it!
+      test('getChange(210, 300) should return [50, 25, 10, 5]', function(assert) {
+        var result = getChange(210, 300); //expect an array containing [50, 25, 10, 5]
+        var expected = [25, 25, 25, 10, 5];
+        assert.deepEqual(result, expected);
+      });
+      test('getChange(486, 600) should return [100, 10, 1, 1, 1, 1]', function(assert) {
+        var result = getChange(486, 600);
+        var expected = [100, 10, 1, 1, 1, 1];
+        assert.deepEqual(result, expected);
+      });
+      test('getChange(59, 200) should return [100, 25, 10, 5, 1]', function(assert) {
+        var result = getChange(59, 200); //test each US coin and dollar bill
+        var expected = [100, 25, 10, 5, 1];
+        assert.deepEqual(result, expected);
+      });
+    </script>
+  </body>
+</html>

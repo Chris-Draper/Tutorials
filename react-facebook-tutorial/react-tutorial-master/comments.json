@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1388534400000,
+        "author": "Pete Hunt",
+        "text": "Hey there!"
+    },
+    {
+        "id": 1420070400000,
+        "author": "Paul O’Shannessy",
+        "text": "React is *great*!"
+    },
+    {
+        "id": 1420070400050,
+        "author": "Chris Draper",
+        "text": "I went into the comments.json file and added this!"
+    },
+    {
+        "id": 1466115309168,
+        "author": "Mother",
+        "text": "Ily <3"
+    },
+    {
+        "id": 1466115324039,
+        "author": "This doesn't feel slow to me",
+        "text": "Its really fast actually"
+    },
+    {
+        "id": 1466115333711,
+        "author": "Whatever",
+        "text": "meh."
+    },
+    {
+        "id": 1466115794846,
+        "author": "Testing",
+        "text": "testing.. testing.. testing...."
+    },
+    {
+        "id": 1466115804404,
+        "author": "Feels faste",
+        "text": "gg :D"
+    },
+    {
+        "id": 1466115815545,
+        "author": "-faster",
+        "text": "fuck my bad stupid typos"
+    }
+]
